@@ -1,8 +1,8 @@
-from BicycleIndustry.py import *
+from BicycleIndustry import *
 
 
 
-RoadWheel = Wheel(2,5,"RoadWheel")
+road_wheel = Wheel(2,5,"RoadWheel")
 BeachWheel = Wheel(3,8,"BeachWheel")
 TrackWheel = Wheel(4,10,"TrackWheel")
 
@@ -23,12 +23,19 @@ Bike6 = Bicycle_Model("Bike6",JeffBike,BeachWheel,Carbon)
 
 
 JoceBikeShop = Bike_Shop("JoceBikeShop")
-JoceBikeShop.bike_shop_inventory(Bike1,Bike2,Bike3,Bike4,Bike5,Bike6)
-JoceBikeShop.bike_shop_profit = 0.20
+JoceBikeShop.add_bike_to_inventory(Bike1)
+JoceBikeShop.add_bike_to_inventory(Bike2)
+JoceBikeShop.add_bike_to_inventory(Bike3)
+# JoceBikeShop.bike_shop_inventory(Bike1,Bike2,Bike3,Bike4,Bike5,Bike6)
 
 CustJudy = Customer("CustJudy",200)
 CustLiz = Customer("CustLiz", 500)
 CustAndrea = Customer("CustAndrea",1000)
+
+customer_list = []
+
+for some_bike in JoceBikeShop.bike_shop_inventory:
+    print some_bike.bike_name, some_bike.bike_weight
 
 print Bike1.bike_name, Bike1.bike_weight
 print Bike2.bike_name, Bike2.bike_weight
@@ -62,7 +69,5 @@ for Customer:
 ## PUT WHO BOUGHT WHAT BIKE WHERE HERE. 
 
 ## PRINT OUT REMAINING INVENTORY
+
 ## PRINT OUT PROFIT
-
-
-
